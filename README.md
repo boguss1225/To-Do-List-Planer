@@ -23,6 +23,6 @@ The basic Calendar function of this program was originally inspired by MIT LGood
 https://github.com/LGoodDatePicker/LGoodDatePicker
 
 * ModifiedFlowLayout 
-The main layout of ToDoList was inspired by this.
+The main layout of ToDoList was inspired by this.\
 Author Babu Kalakrishnan, Modifications by greearb and jzd\
 https://stackoverflow.com/users/513838/jzd
