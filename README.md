@@ -1,5 +1,7 @@
 # ToDoList
-Java ToDoList program. Easy to use, Good looking, Highly utilized, and Light. Used Java lang.
+Java ToDoList program. \
+Easy to use, Good looking, Highly utilized, and Light.\
+Used Java lang.
 # Excution environment
 JavaSE-1.8
 
