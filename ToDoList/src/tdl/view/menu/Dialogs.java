@@ -71,10 +71,11 @@ class saveDialog{
 			 	String pathName = DirName + FileName;
 			 	
 			 	//make new save file on the pathName
-
+			 	//save(pathName);
 			 //if once saved already
 			}else{
 				//save at Model.FilePath
+				//save(Model.FilePath);
 			}
 	}
 }

@@ -8,7 +8,6 @@ import java.time.LocalDate;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JMenuItem;
-import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 
 import tdl.model.Model;
