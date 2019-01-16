@@ -1,39 +1,40 @@
+/*
+ * This file is part of Java To-Do-List Planer(Planet)
+ *
+ * Copyright (C) 2019  H.M. YOON, D.U. OH, S.H. CHAE.
+ *
+ * Java To-Do-List Planer(Planet) is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 1 of the License, or
+ * any later version.
+ *
+ *  Java To-Do-List Planer(Planet) is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, See the
+ * GNU General Public License for more details.
+ * it would be glad to be notified any further modification to copyrighters .
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Java To-Do-List Planer(Planet) If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package tdl.view.todo;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Container;
-import java.awt.Dialog;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
-import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
-
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JCheckBox;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTextField;
-import javax.swing.Scrollable;
 
-import tdl.controller.todo.PopupMenuExample;
-import tdl.controller.todo.todoController;
 import tdl.controller.todo.todoCreationDialog;
-import tdl.model.Model;
-import tdl.model.todoelements.ToDoElementStruct;
 
 public class initToDo extends JScrollPane{
 	JPanel ToDoPanel;
