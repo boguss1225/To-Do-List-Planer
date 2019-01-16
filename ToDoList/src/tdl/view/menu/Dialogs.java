@@ -195,12 +195,17 @@ class HelpDialog{
 			/*add help statements here :) */
 		 	String detailstring = 
 		 		"To Do list for everyone"
+		 	+ "\nJava ToDoList program. "
+		 	+ "\nEasy to use, Good looking, Highly utilized, and Light."
+		 	+ "\nUsed Java lang."
 		 	+ "\n"
-		 	+ "\n"
-		 	+ "\n"
-		 	+ "\n"
-		 	+ "\n"
-		 	+ "\n"
+		 	+ "\nGeneral Features"
+		 	+ "\n* To Do list with priority, memo, log, calendar."
+		 	+ "\n* Create, edit, delete To Do."
+		 	+ "\n* Priority can be assigned."
+		 	+ "\n* Log view with complete date."
+		 	+ "\n* To Do can be viewed in the calendar."
+		 	+ "\n* Three types of color theme available."
 		 	+ "\n";
 		 	
 		 	/*set text area*/
