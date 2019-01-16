@@ -1,3 +1,23 @@
+/*
+ * This file is part of Java To-Do-List Planer(Planet)
+ *
+ * Copyright (C) 2019  H.M. YOON, D.U. OH, S.H. CHAE.
+ *
+ * Java To-Do-List Planer(Planet) is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 1 of the License, or
+ * any later version.
+ *
+ *  Java To-Do-List Planer(Planet) is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, See the
+ * GNU General Public License for more details.
+ * it would be glad to be notified any further modification to copyrighters .
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Java To-Do-List Planer(Planet) If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package tdl.view.menu;
 
 import java.awt.event.ActionEvent;
@@ -11,7 +31,6 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.KeyStroke;
 
-import tdl.controller.todo.todoCreationDialog;//clear after test
 
 
 
@@ -77,7 +96,7 @@ public class MenuBarSection{
 				}
 			}}	
 		save.addActionListener(new saveEventHandler());
-		/*Á¾·á ¸Þ´º¾ÆÀÌÅÛ*/
+		/*ï¿½ï¿½ï¿½ï¿½ ï¿½Þ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
 		class exitEventHandler implements ActionListener{
 			@Override
 			public void actionPerformed(ActionEvent ae){
@@ -91,14 +110,14 @@ public class MenuBarSection{
 				new ThemeDialog(f);
 			}}
 		theme.addActionListener(new themeEventHandler());
-		/*µµ¿ò¸» ¸Þ´º¾ÆÀÌÅÛ*/
+		/*ï¿½ï¿½ï¿½ï¿½ ï¿½Þ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
 		class helpEventHandler implements ActionListener{
 			@Override
 			public void actionPerformed(ActionEvent ae){
 				new HelpDialog(f);
 			}}
 		helpwords.addActionListener(new helpEventHandler());
-		/*ÀúÀÛÀÚ ¸Þ´º¾ÆÀÌÅÛ*/
+		/*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
 		class aboutEventHandler implements ActionListener{
 			@Override
 			public void actionPerformed(ActionEvent ae){
@@ -106,7 +125,7 @@ public class MenuBarSection{
 			}}	
 		about.addActionListener(new aboutEventHandler());
 		
-		/*ÀúÀÛÀÚ ¸Þ´º¾ÆÀÌÅÛ*/
+		/*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
 		class TestingEventHandler implements ActionListener{
 			@Override
 			public void actionPerformed(ActionEvent ae){

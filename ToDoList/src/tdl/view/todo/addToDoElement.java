@@ -1,24 +1,34 @@
+/*
+ * This file is part of Java To-Do-List Planer(Planet)
+ *
+ * Copyright (C) 2019  H.M. YOON, D.U. OH, S.H. CHAE.
+ *
+ * Java To-Do-List Planer(Planet) is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 1 of the License, or
+ * any later version.
+ *
+ *  Java To-Do-List Planer(Planet) is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, See the
+ * GNU General Public License for more details.
+ * it would be glad to be notified any further modification to copyrighters .
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Java To-Do-List Planer(Planet) If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package tdl.view.todo;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.awt.Graphics;
-import java.awt.Image;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;

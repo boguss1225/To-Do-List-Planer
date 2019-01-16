@@ -1,13 +1,31 @@
+/*
+ * This file is part of Java To-Do-List Planer(Planet)
+ *
+ * Copyright (C) 2019  H.M. YOON, D.U. OH, S.H. CHAE.
+ *
+ * Java To-Do-List Planer(Planet) is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 1 of the License, or
+ * any later version.
+ *
+ *  Java To-Do-List Planer(Planet) is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE, See the
+ * GNU General Public License for more details.
+ * it would be glad to be notified any further modification to copyrighters .
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Java To-Do-List Planer(Planet) If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package tdl.view.menu;
 
 import java.awt.BorderLayout;
 import java.awt.Dialog;
-import java.awt.Dimension;
 import java.awt.FileDialog;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.Panel;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
@@ -177,12 +195,17 @@ class HelpDialog{
 			/*add help statements here :) */
 		 	String detailstring = 
 		 		"To Do list for everyone"
+		 	+ "\nJava ToDoList program. "
+		 	+ "\nEasy to use, Good looking, Highly utilized, and Light."
+		 	+ "\nUsed Java lang."
 		 	+ "\n"
-		 	+ "\n"
-		 	+ "\n"
-		 	+ "\n"
-		 	+ "\n"
-		 	+ "\n"
+		 	+ "\nGeneral Features"
+		 	+ "\n* To Do list with priority, memo, log, calendar."
+		 	+ "\n* Create, edit, delete To Do."
+		 	+ "\n* Priority can be assigned."
+		 	+ "\n* Log view with complete date."
+		 	+ "\n* To Do can be viewed in the calendar."
+		 	+ "\n* Three types of color theme available."
 		 	+ "\n";
 		 	
 		 	/*set text area*/
@@ -224,12 +247,12 @@ class AboutDialog{
 			
 		 	String detailstring = 
 		 	"To Do list for everyone"
-		 	+ "\n(c) Copyright HM Yoon and others 2019. All rights reserved."
+		 	+ "\n(c) Copyright HM Yoon, DU Oh and SH Chae 2019. All rights reserved."
 		 	+ "\nall the properties of this program follow GNU lisence."
 		 	+ "\ncontact details"
 		 	+ "\nHM Yoon jcjc7890@gmail.com"
-		 	+ "\n"
-		 	+ "\n"
+			+ "\nDU Oh odu.wave@gmail.com"
+		 	+ "\nSH Chae tjdghco1@gmail.com"
 		 	+ "\n";
 		 	JEditorPane txt1 = new JEditorPane();
 		 	txt1.setEditable(false);
