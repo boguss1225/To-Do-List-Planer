@@ -31,6 +31,8 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.KeyStroke;
 
+import org.json.simple.parser.ParseException;
+
 
 
 
@@ -86,7 +88,12 @@ public class MenuBarSection{
 			public void actionPerformed(ActionEvent ae){
 				try {
 					new openDialog(f);
-				} catch (IOException | ParseException | java.text.ParseException e) {
+				} catch (IOException e) {
+					e.printStackTrace();
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (java.text.ParseException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}

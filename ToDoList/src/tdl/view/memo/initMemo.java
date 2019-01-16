@@ -23,6 +23,8 @@ package tdl.view.memo;
 import javax.swing.JEditorPane;
 import javax.swing.JScrollPane;
 
+import tdl.model.Model;
+
 public class initMemo extends JScrollPane {
 	static JEditorPane memoTexttab;
 	
