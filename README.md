@@ -13,11 +13,14 @@ ToDoList 1.0 was released on Github in January 14, 2019.
 * Create, edit, delete To Do.
 * Priority can be assigned.
 * Log view with complete date.
-* To Do can be viewed in the calendar.
-* Three types of color theme available.
+* To Do can be viewed in the calendar.(Not implemented yet)
+* Three types of color theme available.(Not implemented yet)
 
 
 # Screenshots
+![picture](https://github.com/ohdaum/To-Do-List-Planer/blob/master/ToDoList%20Screenshots/Screenshots1.PNG)![picture](https://github.com/ohdaum/To-Do-List-Planer/blob/master/ToDoList%20Screenshots/Screenshots2.PNG)
+![picture](https://github.com/ohdaum/To-Do-List-Planer/blob/master/ToDoList%20Screenshots/Screenshots3.PNG)![picture](https://github.com/ohdaum/To-Do-List-Planer/blob/master/ToDoList%20Screenshots/Screenshots4.PNG)
+![picture](https://github.com/ohdaum/To-Do-List-Planer/blob/master/ToDoList%20Screenshots/Screenshots5.PNG)![picture](https://github.com/ohdaum/To-Do-List-Planer/blob/master/ToDoList%20Screenshots/Screenshots6.PNG)
 
 # Thanks and acknowledgment to
 * MIT LGoodDatePicker
