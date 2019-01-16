@@ -1,4 +1,4 @@
-/*
+﻿/*
  * This file is part of Java To-Do-List Planer(Planet)
  *
  * Copyright (C) 2019  H.M. YOON, D.U. OH, S.H. CHAE.
@@ -49,7 +49,8 @@ public class MenuBarSection{
 		open.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, ActionEvent.CTRL_MASK));
 		JMenuItem save = new JMenuItem("Save");
 		save.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, ActionEvent.CTRL_MASK));
-		JMenuItem saveAs = new JMenuItem("Save As..");		JMenuItem exit = new JMenuItem("Close");
+		JMenuItem saveAs = new JMenuItem("Save As..");		
+		JMenuItem exit = new JMenuItem("Close");
 		JMenuItem theme = new JMenuItem("Theme");
 		JMenuItem helpwords = new JMenuItem("Help");
 		JMenuItem about = new JMenuItem("About");
@@ -72,13 +73,20 @@ public class MenuBarSection{
 		menubar.add(help);
 		
 		/*<MenuItem_Action>*/
+		/*new*/
+		class newfileEventHandler implements ActionListener{
+			@Override
+			public void actionPerformed(ActionEvent ae){
+				new newfileDialog(f);
+			}}	
+		newfile.addActionListener(new newfileEventHandler());
 		/*open*/
 		class openEventHandler implements ActionListener{
 			@Override
 			public void actionPerformed(ActionEvent ae){
 				try {
 					new openDialog(f);
-				} catch (IOException e) {
+				} catch (IOException | ParseException | java.text.ParseException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
@@ -96,7 +104,19 @@ public class MenuBarSection{
 				}
 			}}	
 		save.addActionListener(new saveEventHandler());
-		/*���� �޴�������*/
+		/*save*/
+		class saveAsEventHandler implements ActionListener{
+			@Override
+			public void actionPerformed(ActionEvent ae){
+				try {
+					new saveAsDialog(f);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}}	
+		saveAs.addActionListener(new saveAsEventHandler());
+		/*Exit*/
 		class exitEventHandler implements ActionListener{
 			@Override
 			public void actionPerformed(ActionEvent ae){
@@ -110,14 +130,14 @@ public class MenuBarSection{
 				new ThemeDialog(f);
 			}}
 		theme.addActionListener(new themeEventHandler());
-		/*���� �޴�������*/
+		/*Help*/
 		class helpEventHandler implements ActionListener{
 			@Override
 			public void actionPerformed(ActionEvent ae){
 				new HelpDialog(f);
 			}}
 		helpwords.addActionListener(new helpEventHandler());
-		/*������ �޴�������*/
+		/*About*/
 		class aboutEventHandler implements ActionListener{
 			@Override
 			public void actionPerformed(ActionEvent ae){
@@ -125,7 +145,7 @@ public class MenuBarSection{
 			}}	
 		about.addActionListener(new aboutEventHandler());
 		
-		/*������ �޴�������*/
+		/*Testing*/
 		class TestingEventHandler implements ActionListener{
 			@Override
 			public void actionPerformed(ActionEvent ae){

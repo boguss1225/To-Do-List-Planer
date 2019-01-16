@@ -20,10 +20,50 @@
 
 package tdl.controller.menu;
 
-public class Save {
-	Save(String path){			 	
-	//	JSONObject personInfo = new JSONObject();
+import java.io.FileWriter;
+import java.io.IOException;
+import java.time.format.DateTimeFormatter;
 
-		//Model.FilePath = path;
+import javax.swing.JOptionPane;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
+import tdl.controller.todo.todoController;
+import tdl.model.Model;
+import tdl.model.todoelements.ToDoElementStruct;
+import tdl.view.Taps;
+
+public class Save {
+	public Save(String path){			 	
+		try { 
+			Taps.memotab.getmemo(); //get memo from memo view
+			JSONObject personInfo = new JSONObject();
+			personInfo.put("Logtxt", Model.logTextContents); 
+			personInfo.put("memo", Model.memo);
+			
+			JSONArray PQList = new JSONArray();
+			todoController ctr = new todoController();
+			while (!ctr.PQCopy.isEmpty()) {
+				ToDoElementStruct temps= ctr.PQCopy.poll();
+				JSONObject StructInfo = new JSONObject();
+				StructInfo.put("todoTxt", temps.getToDoText());
+				StructInfo.put("Priority", temps.getPriority());
+				StructInfo.put("Dday", temps.getDDay().format(DateTimeFormatter.ofPattern("yyyyMMdd")));
+				StructInfo.put("checkValue", temps.getCheckValue());
+				PQList.add(StructInfo); 
+			}
+			personInfo.put("PQ", PQList);
+			
+			/*write file*/
+			FileWriter file = new FileWriter(path); 
+			file.write(personInfo.toJSONString()); 
+			file.flush(); 
+			file.close();
+			JOptionPane.showMessageDialog(null, "Saved!");
+			Model.FilePath = path;
+		} catch (IOException e) {
+			e.printStackTrace(); 
+		}
 	}
 }

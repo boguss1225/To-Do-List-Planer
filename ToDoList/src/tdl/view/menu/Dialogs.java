@@ -36,18 +36,95 @@ import javax.swing.JButton;
 import javax.swing.JEditorPane;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
+import org.json.simple.parser.ParseException;
+
 import tdl.view.AdjustDialog;
+import tdl.view.UpdateAllView;
+import tdl.controller.menu.Load;
+import tdl.controller.menu.Save;
 import tdl.model.Model;
 
 public class Dialogs {
 	
 }
 
+class newfileDialog{
+	public newfileDialog(JFrame f){
+			/*create open dialog*/
+		 	Dialog Dia = new Dialog(f,"New File",true);
+		 	Dia.addWindowListener(new WindowAdapter(){
+				public void windowClosing(WindowEvent e){
+					Dia.dispose();
+				}
+			});
+		 	/*set size of dialog*/
+		 	Dia.setSize(250, 100);
+		 	
+		 	/*set location*/
+		 	new AdjustDialog(f,Dia);
+		 	
+		 	/*set layout*/
+		 	Dia.setLayout(new BorderLayout());
+		 	
+		 	/*announcement */
+		 	JLabel l1 = new JLabel("Will you save this before new?",JLabel.CENTER);
+		 	
+			/*set button1*/
+			JButton b1 = new JButton("OK");
+			class b1EventHandler implements ActionListener{
+				@Override
+				public void actionPerformed(ActionEvent ae){
+					try {
+						new saveDialog(f);
+						//new
+						Model.resetModel();
+				    	new UpdateAllView();
+					} catch (IOException e) {
+						e.printStackTrace();
+						JOptionPane.showMessageDialog(null, "Save fail!");
+					}
+					Dia.dispose();
+				}}
+			b1.addActionListener(new b1EventHandler());
+		 	
+			/*set button2*/
+			JButton b2 = new JButton("No");
+			class b2EventHandler implements ActionListener{
+				@Override
+				public void actionPerformed(ActionEvent ae){
+					//new
+					Model.resetModel();
+					new UpdateAllView();
+					Dia.dispose();
+				}}
+			b2.addActionListener(new b2EventHandler());
+			
+			/*set button3*/
+			JButton b3 = new JButton("cancel");
+			class b3EventHandler implements ActionListener{
+				@Override
+				public void actionPerformed(ActionEvent ae){
+					Dia.dispose();
+				}}
+			b3.addActionListener(new b3EventHandler());
+			
+			/*add components*/
+			JPanel buttonPane = new JPanel(new GridLayout(1,3));
+			buttonPane.add(b1);
+			buttonPane.add(b2);
+			buttonPane.add(b3);	
+			Dia.add(l1, BorderLayout.CENTER);
+			Dia.add(buttonPane, BorderLayout.SOUTH);
+			Dia.setVisible(true);
+	}
+}
+
 class openDialog{
-	public openDialog(JFrame f) throws IOException{
+	public openDialog(JFrame f) throws IOException, ParseException, java.text.ParseException{
 			/*create open dialog*/
 		 	FileDialog Dia = new FileDialog(f,"Open File",FileDialog.LOAD);
 		 	Dia.addWindowListener(new WindowAdapter(){
@@ -57,13 +134,24 @@ class openDialog{
 			});
 		 	
 		 	/*set initial file*/
-		 	Dia.setFile("*.*");
+		 	Dia.setFile("*.json");
 		 	Dia.setVisible(true);
 		 	
 		 	/*get path(directory and file name)*/
 		 	String DirName = Dia.getDirectory();
 		 	String FileName = Dia.getFile();
-		 	String pathName = DirName + FileName;
+		 	String pathName = null;
+		 	if(DirName == null){
+		 		return;
+		 	}else{
+		 		pathName = DirName + FileName;
+		 		//make new save file on the pathName
+			 	new Load(pathName);
+				//set static path of this file
+			 	Model.FilePath = pathName;
+		 	}
+		 	System.out.println("Load :" + pathName);
+	
 		}
 }
 
@@ -80,20 +168,28 @@ class saveDialog{
 				});
 			 	
 			 	/*set initial file*/
-			 	Dia.setFile("*.*");
+			 	Dia.setFile("*.json");
 			 	Dia.setVisible(true);
 			 	
 			 	/*get path(directory and file name)*/
 			 	String DirName = Dia.getDirectory();
 			 	String FileName = Dia.getFile();
-			 	String pathName = DirName + FileName;
-			 	
-			 	//make new save file on the pathName
-			 	//save(pathName);
-			 //if once saved already
+			 	String pathName = null;
+			 	if(DirName == null){
+			 		return;
+			 	}else{
+			 		pathName = DirName + FileName;
+			 		//make new save file on the pathName
+				 	new Save(pathName);
+					//set static path of this file
+				 	Model.FilePath = pathName;
+			 	}
+
+		 	//if once saved already
 			}else{
 				//save at Model.FilePath
-				//save(Model.FilePath);
+			 	System.out.println("hSave :" + Model.FilePath);
+				new Save(Model.FilePath);
 			}
 	}
 }
@@ -109,18 +205,22 @@ class saveAsDialog{
 			});
 		 	
 		 	/*set initial file*/
-		 	Dia.setFile("*.*");
+		 	Dia.setFile("*.json");
 		 	Dia.setVisible(true);
 		 	
 		 	/*get path(directory and file name)*/
 		 	String DirName = Dia.getDirectory();
 		 	String FileName = Dia.getFile();
-		 	String pathName = DirName + FileName;
-		 	
-		 	//make new save file on the pathName
-		 	
-			//set static path of this file
-		 	Model.FilePath = pathName;
+		 	String pathName = null;
+		 	if(DirName == null){
+		 		return;
+		 	}else{
+		 		pathName = DirName + FileName;
+		 		//make new save file on the pathName
+			 	new Save(pathName);
+				//set static path of this file
+			 	Model.FilePath = pathName;
+		 	}	 	
 	}
 }
 

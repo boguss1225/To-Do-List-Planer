@@ -36,7 +36,7 @@ import tdl.view.todo.initToDo;
 public class Taps{
 	JTabbedPane tabPane;
 	JScrollPane todotab;
-	JScrollPane memotab;
+	public static initMemo memotab;
 	public static initLog logtab;
 	JPanel calendartab;
 	

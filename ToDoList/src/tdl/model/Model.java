@@ -32,4 +32,11 @@ public class Model {
 		priorityQueue = new PriorityQueue<ToDoElementStruct>();
 		
 	}
+	public static void resetModel(){
+		//reset every Data
+		priorityQueue = new PriorityQueue<ToDoElementStruct>();
+		logTextContents="log start...";
+		memo = "new memo";
+		FilePath = null;
+	}
 }

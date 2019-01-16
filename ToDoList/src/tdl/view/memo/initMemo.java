@@ -24,15 +24,22 @@ import javax.swing.JEditorPane;
 import javax.swing.JScrollPane;
 
 public class initMemo extends JScrollPane {
-	JEditorPane memoTexttab;
+	static JEditorPane memoTexttab;
 	
 	public initMemo(){
 		memoTexttab = new JEditorPane();
-		memoTexttab.setText("Launched a rocket for the PlaNet");
+		memoTexttab.setText("Launched a rocket to the PlaNet");
 		memoTexttab.setVisible(true);
 		this.setViewportView(memoTexttab);
 		this.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
 
+	}
+	
+	public void updatememoView(){
+		memoTexttab.setText(Model.memo);
+	}
+	public void getmemo(){
+		Model.memo = memoTexttab.getText();
 	}
 
 }
