@@ -131,7 +131,7 @@ class CreateToDoTextPanel extends JPanel{
 }
 
 class CreatePriorityPanel extends JPanel{
-	private int selectedPriority = 0;
+	private int selectedPriority = 5;
 	private JButton [] PriorityBtn = new JButton[6];
 	
 	CreatePriorityPanel(){
