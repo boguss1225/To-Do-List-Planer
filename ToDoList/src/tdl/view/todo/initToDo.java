@@ -35,6 +35,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
 import tdl.controller.todo.todoCreationDialog;
+import tdl.model.theme.Theme;
 
 public class initToDo extends JScrollPane{
 	JPanel ToDoPanel;
@@ -57,7 +58,7 @@ class initCreationButton extends JPanel implements MouseListener{
 	JButton b1;
 	initCreationButton(JFrame f){
 		b1 = new JButton("Add New",new ImageIcon("src/tdl/icon/add_Circle.png"));
-		
+
 		class b1EventHandler implements ActionListener{
 			@Override
 			public void actionPerformed(ActionEvent ae){
@@ -69,10 +70,11 @@ class initCreationButton extends JPanel implements MouseListener{
 		b1.setOpaque(false);
 		b1.setContentAreaFilled(false);
 		b1.setBorderPainted(false);
-		
 		this.setLayout(new BorderLayout());
 		this.add(b1);
 		this.setVisible(true);
+		/*Setting Color*/
+		this.setBackground(Theme.themeColor1);
 	}
 	@Override
     public Dimension getMinimumSize() {

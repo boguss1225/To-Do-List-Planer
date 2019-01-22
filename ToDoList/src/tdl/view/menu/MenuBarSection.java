@@ -20,6 +20,7 @@
 
 package tdl.view.menu;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -33,11 +34,14 @@ import javax.swing.KeyStroke;
 
 import org.json.simple.parser.ParseException;
 
+import tdl.model.theme.Theme;
+
 
 
 
 public class MenuBarSection{
 	public MenuBarSection(JFrame f){
+
 		/*Menu_bar*/
 		JMenuBar menubar = new JMenuBar();
 		JMenu file = new JMenu("File");
@@ -73,6 +77,8 @@ public class MenuBarSection{
 		menubar.add(edit);
 		menubar.add(setting);
 		menubar.add(help);
+		/*setting color*/
+		menubar.setBackground(Theme.menuBarColor);
 		
 		/*<MenuItem_Action>*/
 		/*new*/
@@ -164,6 +170,11 @@ public class MenuBarSection{
 		/*menubar.setOpaque(true);*/
 		f.setJMenuBar(menubar);
 		f.setVisible(true);
+		
+	}
+
+	private static void setBackground(Color menuBarColor) {
+		// TODO Auto-generated method stub
 		
 	}	
 }

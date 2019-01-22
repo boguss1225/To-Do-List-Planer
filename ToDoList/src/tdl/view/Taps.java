@@ -28,6 +28,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 
+import tdl.model.theme.Theme;
 import tdl.view.calendar.initCalendar;
 import tdl.view.log.initLog;
 import tdl.view.memo.initMemo;
@@ -42,12 +43,12 @@ public class Taps{
 	
 	Taps(JFrame f){
 		tabPane = new JTabbedPane();		
-
+		
 		todotab = new initToDo(f);
 		memotab = new initMemo();
 		logtab = new initLog();
 		calendartab = new initCalendar();
-		
+
 		tabPane.addTab("ToDo", todotab);
 		tabPane.addTab("Memo", memotab);
 		tabPane.addTab("log", logtab);
@@ -59,5 +60,11 @@ public class Taps{
 		f.add(tabPane, BorderLayout.CENTER);
 		f.setVisible(true);
 		
+		/*Setting Color*/		
+		tabPane.setBackgroundAt(0, Theme.themeColor1);
+		tabPane.setBackgroundAt(1, Theme.themeColor2);
+		tabPane.setBackgroundAt(2, Theme.themeColor3);
+		tabPane.setBackgroundAt(3, Theme.themeColor4);
+		f.getContentPane().setBackground(Theme.tapsColor);
 	}
 }

@@ -20,6 +20,7 @@
 
 package tdl.view.todo;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -34,6 +35,7 @@ import javax.swing.JScrollPane;
 
 import tdl.controller.todo.todoController;
 import tdl.model.Model;
+import tdl.model.theme.Theme;
 
 public class initToDoElements extends JScrollPane{
 	JPanel toDoElementsP1;
@@ -50,6 +52,8 @@ public class initToDoElements extends JScrollPane{
 		if(Model.priorityQueue.peek()==null){//nothing to do
 			toDoElementsP1.removeAll();
 			//�ʱ��̹���
+			/*Setting color*/
+			toDoElementsP1.setBackground(Color.white);
 			BufferedImage myPicture;
 			try {
 				myPicture = ImageIO.read(new File("src/tdl/icon/toDoInitImage.png"));
@@ -68,6 +72,7 @@ public class initToDoElements extends JScrollPane{
 			}
 			toDoElementsP1.revalidate();
 			toDoElementsP1.repaint();
+
 		}				
 	}
 

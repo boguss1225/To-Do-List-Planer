@@ -20,6 +20,7 @@
 
 package tdl.controller.todo;
 
+import java.awt.Color;
 import java.awt.Dialog;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -43,6 +44,7 @@ import javax.swing.JTextField;
 import com.github.lgooddatepicker.components.DatePicker;
 
 import tdl.model.Model;
+import tdl.model.theme.Theme;
 import tdl.model.todoelements.ToDoElementStruct;
 import tdl.view.AdjustDialog;
 import tdl.view.todo.initToDo;
@@ -84,7 +86,7 @@ public class todoCreationDialog{
 		priorityPanel = new CreatePriorityPanel();
 		dueDatePanel = new CreateDueDatePanel();
 		okPanel = new CreateOKPanel(this);
-
+		
 		GridBagConstraints c = new GridBagConstraints();
 		c.fill = GridBagConstraints.HORIZONTAL;
 	    c.gridx = 0;
@@ -116,6 +118,11 @@ public class todoCreationDialog{
 		Dia.add(okPanel,c);
 		Dia.setVisible(true);
 		Dia.pack();
+	}
+
+	private void setBackground(Color themeColor5) {
+		// TODO Auto-generated method stub
+		
 	}
 }
 
@@ -185,6 +192,7 @@ class CreateDueDatePanel extends JPanel{
 		dp1 = new DatePicker();
 		dp1.setDate(LocalDate.now().plusDays(7));
 		this.add(dp1);
+		
 	}
 }
 
@@ -193,6 +201,9 @@ class CreateOKPanel extends JPanel{
 	JButton b2 = new JButton("  Undo  ", new ImageIcon("src/tdl/icon/undo.png"));
 	ToDoElementStruct todoData;
 	CreateOKPanel(todoCreationDialog dia){
+		
+		/*setting color*/ 
+		this.setBackground(Theme.themeColor8);
 		
 		class b1EventHandler implements ActionListener{
 			@Override
