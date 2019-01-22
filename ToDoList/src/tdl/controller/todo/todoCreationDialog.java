@@ -203,8 +203,8 @@ class CreateOKPanel extends JPanel{
 	CreateOKPanel(todoCreationDialog dia){
 		
 		/*setting color*/ 
-		this.setBackground(Theme.themeColor8);
-		
+		b1.setBackground(Theme.themeColor1);
+		b2.setBackground(Theme.themeColor8);
 		class b1EventHandler implements ActionListener{
 			@Override
 			public void actionPerformed(ActionEvent ae){
@@ -232,13 +232,13 @@ class CreateOKPanel extends JPanel{
 				dia.Dia.dispose();
 			}}
 		b2.addActionListener(new b2EventHandler());
-		b1.setOpaque(false);
-		b1.setContentAreaFilled(false);
-		b1.setBorderPainted(false);
-		b2.setOpaque(false);
-		b2.setContentAreaFilled(false);
-		b2.setBorderPainted(false);
-		this.setLayout(new GridLayout(1,2,2,2));
+		b1.setOpaque(true);
+		b1.setContentAreaFilled(true);
+		b1.setBorderPainted(true);
+		b2.setOpaque(true);
+		b2.setContentAreaFilled(true);
+		b2.setBorderPainted(true);
+		this.setLayout(new GridLayout(1,2,3,3));
 		this.add(b1);
 		this.add(b2);
 	}
