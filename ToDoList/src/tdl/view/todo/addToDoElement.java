@@ -20,6 +20,7 @@
 
 package tdl.view.todo;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
@@ -37,6 +38,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import tdl.controller.todo.PopupMenuExample;
+import tdl.model.theme.Theme;
 import tdl.model.todoelements.ToDoElementStruct;
 
 public class addToDoElement extends JPanel implements MouseListener{
@@ -90,7 +92,7 @@ public class addToDoElement extends JPanel implements MouseListener{
 		        return new Dimension(1000, 30);
 		    }
 		};
-		txtfld1.setBorder(BorderFactory.createRaisedBevelBorder());
+		txtfld1.setBorder(null);
 		txtfld1.setEditable(false);
 		txtfld1.setText(inputstructure.getToDoText());
 		/*D-day*/
@@ -100,8 +102,11 @@ public class addToDoElement extends JPanel implements MouseListener{
 			}else{
 				Ddayl = new JLabel("D+"+daysBetween);//D-day 
 			}
-
-		//this.setBackground(Color.color[inputstructure.getPriority()]);
+		//setting color
+		txtfld1.setBackground(Theme.themeColor8);
+		this.setBackground(Theme.themeColor8);
+		cb1.setBackground(Theme.themeColor8);
+		
 		this.setVisible(true);
 		this.add(Ddayl);
 		this.add(txtfld1);

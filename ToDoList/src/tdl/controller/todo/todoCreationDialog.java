@@ -20,6 +20,7 @@
 
 package tdl.controller.todo;
 
+import java.awt.Color;
 import java.awt.Dialog;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -43,6 +44,7 @@ import javax.swing.JTextField;
 import com.github.lgooddatepicker.components.DatePicker;
 
 import tdl.model.Model;
+import tdl.model.theme.Theme;
 import tdl.model.todoelements.ToDoElementStruct;
 import tdl.view.AdjustDialog;
 import tdl.view.todo.initToDo;
@@ -84,7 +86,7 @@ public class todoCreationDialog{
 		priorityPanel = new CreatePriorityPanel();
 		dueDatePanel = new CreateDueDatePanel();
 		okPanel = new CreateOKPanel(this);
-
+		
 		GridBagConstraints c = new GridBagConstraints();
 		c.fill = GridBagConstraints.HORIZONTAL;
 	    c.gridx = 0;
@@ -116,6 +118,11 @@ public class todoCreationDialog{
 		Dia.add(okPanel,c);
 		Dia.setVisible(true);
 		Dia.pack();
+	}
+
+	private void setBackground(Color themeColor5) {
+		// TODO Auto-generated method stub
+		
 	}
 }
 
@@ -185,6 +192,7 @@ class CreateDueDatePanel extends JPanel{
 		dp1 = new DatePicker();
 		dp1.setDate(LocalDate.now().plusDays(7));
 		this.add(dp1);
+		
 	}
 }
 
@@ -194,6 +202,9 @@ class CreateOKPanel extends JPanel{
 	ToDoElementStruct todoData;
 	CreateOKPanel(todoCreationDialog dia){
 		
+		/*setting color*/ 
+		b1.setBackground(Theme.themeColor1);
+		b2.setBackground(Theme.themeColor8);
 		class b1EventHandler implements ActionListener{
 			@Override
 			public void actionPerformed(ActionEvent ae){
@@ -221,13 +232,13 @@ class CreateOKPanel extends JPanel{
 				dia.Dia.dispose();
 			}}
 		b2.addActionListener(new b2EventHandler());
-		b1.setOpaque(false);
-		b1.setContentAreaFilled(false);
-		b1.setBorderPainted(false);
-		b2.setOpaque(false);
-		b2.setContentAreaFilled(false);
-		b2.setBorderPainted(false);
-		this.setLayout(new GridLayout(1,2,2,2));
+		b1.setOpaque(true);
+		b1.setContentAreaFilled(true);
+		b1.setBorderPainted(true);
+		b2.setOpaque(true);
+		b2.setContentAreaFilled(true);
+		b2.setBorderPainted(true);
+		this.setLayout(new GridLayout(1,2,3,3));
 		this.add(b1);
 		this.add(b2);
 	}
