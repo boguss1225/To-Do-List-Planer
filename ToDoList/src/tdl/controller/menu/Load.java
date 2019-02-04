@@ -21,9 +21,13 @@
 
 package tdl.controller.menu;
 
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.nio.charset.StandardCharsets;
 import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -42,7 +46,7 @@ public class Load {
 	public Load(String path) throws org.json.simple.parser.ParseException, ParseException{
 		JSONParser parser = new JSONParser();
 		try { 
-			FileReader reader = new FileReader(path);
+			Reader reader = new InputStreamReader(new FileInputStream(path), StandardCharsets.UTF_8);
 			JSONObject jsonObject = (JSONObject)parser.parse(reader);
 
 			String Logtxt = (String) jsonObject.get("Logtxt");

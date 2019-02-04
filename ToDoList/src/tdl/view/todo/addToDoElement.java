@@ -100,13 +100,40 @@ public class addToDoElement extends JPanel implements MouseListener{
 		if(LocalDate.now().isBefore(inputstructure.getDDay())){
 				Ddayl = new JLabel("D-"+daysBetween);//D-day 
 			}else{
-				Ddayl = new JLabel("D+"+daysBetween);//D-day 
+				Ddayl = new JLabel("D+"+ (daysBetween*-1));//D-day 
 			}
 		//setting color
-		txtfld1.setBackground(Theme.themeColor8);
-		this.setBackground(Theme.themeColor8);
-		cb1.setBackground(Theme.themeColor8);
+		if(cinputstructure.getPriority()==0){
+			//txtfld1.setBackground(Theme.themeColor5);
+			//this.setBackground(Theme.themeColor5);
+			cb1.setBackground(Theme.themeColor5);
+		}else if(cinputstructure.getPriority()==1){
+			//txtfld1.setBackground(Theme.themeColor6);
+			//this.setBackground(Theme.themeColor6);
+			cb1.setBackground(Theme.themeColor6);
+		}else if(cinputstructure.getPriority()==2){
+			//txtfld1.setBackground(Theme.themeColor7);
+			//this.setBackground(Theme.themeColor7);
+			cb1.setBackground(Theme.themeColor7);
+		}else if(cinputstructure.getPriority()==3){
+			//txtfld1.setBackground(Theme.themeColor8);
+			//this.setBackground(Theme.themeColor8);
+			cb1.setBackground(Theme.themeColor8);
+		}else if(cinputstructure.getPriority()==4){
+			//txtfld1.setBackground(Theme.themeColor9);
+			//this.setBackground(Theme.themeColor9);
+			cb1.setBackground(Theme.themeColor9);
+		}else if(cinputstructure.getPriority()==5){
+			//txtfld1.setBackground(Theme.themeColor10);
+			//this.setBackground(Theme.themeColor10);
+			cb1.setBackground(Theme.themeColor10);
+		}else {
+			//txtfld1.setBackground(Theme.themeColor10);
+			//this.setBackground(Theme.themeColor10);
+			cb1.setBackground(Theme.themeColor10);
+		}
 		
+	
 		this.setVisible(true);
 		this.add(Ddayl);
 		this.add(txtfld1);

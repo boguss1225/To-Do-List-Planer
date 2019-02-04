@@ -72,7 +72,7 @@ public class initToDoElements extends JScrollPane{
 			}
 			toDoElementsP1.revalidate();
 			toDoElementsP1.repaint();
-
+			new addToDoElement(toDoElementsP1);
 		}				
 	}
 

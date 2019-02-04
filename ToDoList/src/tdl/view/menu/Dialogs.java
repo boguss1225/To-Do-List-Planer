@@ -47,6 +47,7 @@ import tdl.view.UpdateAllView;
 import tdl.controller.menu.Load;
 import tdl.controller.menu.Save;
 import tdl.model.Model;
+import tdl.model.theme.Theme;
 
 public class Dialogs {
 	
@@ -383,50 +384,48 @@ class ThemeDialog{
 				}
 			});
 		 	
-		 	ThemeDia.setSize(440, 200);
+		 	ThemeDia.setSize(170, 240);
 		 	new AdjustDialog(f,ThemeDia);
 
 		 	ThemeDia.setLayout(new FlowLayout());
 			
 		 	JLabel Hl1 = new JLabel("***Select Theme***");
 			
-			JButton Hb1 = new JButton("black berry");
-			JButton Hb2 = new JButton("black berry");
-			JButton Hb3 = new JButton("black berry");
-			JButton Hb4 = new JButton("default");
+			JButton Hb1 = new JButton("Peach");
+			JButton Hb2 = new JButton("Sky Blue");
+			JButton Hb3 = new JButton("Dawn");
+			JButton Hb4 = new JButton("none");
 			
-			JButton Hb5 = new JButton("confirm");
 			JButton Hb6 = new JButton("cancel");
 			class Hb1EventHandler implements ActionListener{
 				@Override
 				public void actionPerformed(ActionEvent ae){
+					Model.theme.setTheme(1);
 					ThemeDia.dispose();
 				}}
 			Hb1.addActionListener(new Hb1EventHandler());
 			class Hb2EventHandler implements ActionListener{
 				@Override
 				public void actionPerformed(ActionEvent ae){
+					Model.theme.setTheme(2);
 					ThemeDia.dispose();
 				}}
 			Hb2.addActionListener(new Hb2EventHandler());
 			class Hb3EventHandler implements ActionListener{
 				@Override
 				public void actionPerformed(ActionEvent ae){
+					Model.theme.setTheme(3);
 					ThemeDia.dispose();
 				}}
 			Hb3.addActionListener(new Hb3EventHandler());
 			class Hb4EventHandler implements ActionListener{
 				@Override
 				public void actionPerformed(ActionEvent ae){
+					Model.theme.setTheme(4);
 					ThemeDia.dispose();
 				}}
 			Hb4.addActionListener(new Hb4EventHandler());
-			class Hb5EventHandler implements ActionListener{
-				@Override
-				public void actionPerformed(ActionEvent ae){
-					ThemeDia.dispose();
-				}}
-			Hb5.addActionListener(new Hb5EventHandler());
+			
 			class Hb6EventHandler implements ActionListener{
 				@Override
 				public void actionPerformed(ActionEvent ae){
@@ -438,15 +437,14 @@ class ThemeDialog{
 			ThemeP0.add(Hl1);
 			
 			Panel ThemeP1 = new Panel();
-			ThemeP1.setLayout(new GridLayout(5,1,0,5));
+			ThemeP1.setLayout(new GridLayout(4,1,0,3));
 			ThemeP1.add(Hb1);
 			ThemeP1.add(Hb2);
 			ThemeP1.add(Hb3);
 			ThemeP1.add(Hb4);
 			
 			Panel ThemeP2 = new Panel();
-			ThemeP2.setLayout(new GridLayout(1,2));
-			ThemeP2.add(Hb5);
+			ThemeP2.setLayout(new GridLayout(1,1));
 			ThemeP2.add(Hb6);
 
 			ThemeDia.add(ThemeP0, BorderLayout.NORTH);

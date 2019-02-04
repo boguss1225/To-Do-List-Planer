@@ -22,6 +22,7 @@ package tdl.model;
 
 import java.util.PriorityQueue;
 
+import tdl.model.theme.Theme;
 import tdl.model.todoelements.ToDoElementStruct;
 
 public class Model {
@@ -29,9 +30,10 @@ public class Model {
 	public static String logTextContents="log start...";
 	public static String memo = null;
 	public static String FilePath = null;
+	public static Theme theme;
 	public Model(){
 		priorityQueue = new PriorityQueue<ToDoElementStruct>();
-		
+		theme = new Theme();
 	}
 	public static void resetModel(){
 		//reset every Data

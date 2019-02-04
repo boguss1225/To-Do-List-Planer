@@ -20,8 +20,12 @@
 
 package tdl.controller.menu;
 
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+import java.nio.charset.StandardCharsets;
 import java.time.format.DateTimeFormatter;
 
 import javax.swing.JOptionPane;
@@ -56,7 +60,7 @@ public class Save {
 			personInfo.put("PQ", PQList);
 			
 			/*write file*/
-			FileWriter file = new FileWriter(path); 
+			Writer file = new OutputStreamWriter(new FileOutputStream(path), StandardCharsets.UTF_8);
 			file.write(personInfo.toJSONString()); 
 			file.flush(); 
 			file.close();

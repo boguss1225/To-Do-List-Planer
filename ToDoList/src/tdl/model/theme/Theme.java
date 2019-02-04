@@ -36,7 +36,9 @@ public class Theme {
 	public static Color menuBarColor = Color.decode("#F2F2F2");
 	public static Color tapsColor = Color.decode("#D9D9D9");
 
-	Theme(int themeNumb){
+	public Theme(){
+	}
+	public void setTheme(int themeNumb){
 		if(themeNumb==1){
 			//Peach theme
 			themeColor1 = Color.decode("#F66565");

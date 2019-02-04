@@ -138,7 +138,7 @@ class CreateToDoTextPanel extends JPanel{
 }
 
 class CreatePriorityPanel extends JPanel{
-	private int selectedPriority = 5;
+	private int selectedPriority = 3;
 	private JButton [] PriorityBtn = new JButton[6];
 	
 	CreatePriorityPanel(){
@@ -150,7 +150,7 @@ class CreatePriorityPanel extends JPanel{
 		a[3] = new ImageIcon("src/tdl/icon/number_3.png");
 		a[4] = new ImageIcon("src/tdl/icon/number_4.png");
 		a[5] = new ImageIcon("src/tdl/icon/number_5.png");
-		a[6] = new ImageIcon("src/tdl/icon/checked.png");
+		a[6] = new ImageIcon("src/tdl/icon/checkedblue.png");
 
 		this.setLayout(new GridLayout(1,6));
 		for(int i = 0; i < 6;i++){
@@ -177,7 +177,7 @@ class CreatePriorityPanel extends JPanel{
 			PriorityBtn[i].setBorderPainted(false);
 			this.add(PriorityBtn[i]);
 		}
-		PriorityBtn[0].setIcon(a[6]);
+		PriorityBtn[3].setIcon(a[6]);
 
 	}
 	int getSelectedPriority(){
